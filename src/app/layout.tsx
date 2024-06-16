@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins as FontSans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const fontSans = FontSans({ subsets: ["latin"], weight: ["200", "400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" data-theme="winter">
+      <body className={`${fontSans.className} bg-base-200`}>
+        {children}
+      </body>
     </html>
   );
 }
