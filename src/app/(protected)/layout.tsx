@@ -4,7 +4,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="bg-base-100 text-black">
+    <div className="bg-base-300 flex flex-col justify-center items-center text-black min-h-screen">
         {children}
     </div>
   );

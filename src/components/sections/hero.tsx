@@ -1,13 +1,62 @@
+import { ArrowDown, ArrowRight, Check } from "lucide-react";
+
 export function Hero() {
     return (
-        <div className="hero min-h-screen">
-            <div className="hero-content text-center flex-col">
+        <div className="hero min-h-screen bg-base-300 items-start pt-24 md:pt-38">
+            <div className="hero-content  flex-col">
                 <div className="w-full flex  items-center flex-col">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl text-accent-content font-semibold">Extract JSON from <span className=" bg-primary px-4 text-base-100">any data</span></h1>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl text-accent-content font-normal">with AI</h2>
-                    <p className="py-6 max-w-2xl text-base-content text-md md:text-lg lg:text-xl">No one likes to work with unstructure data. <br/>JSON scrap helps you to extract strucured data from any source.</p>
-                    <a href="#pricing" className="btn btn-primary">Get Started</a>
+                    <div className="flex-col md:flex-row flex max-w-3xl w-full justify-between items-center py-8">
+                        <div className="w-full">
+                            {/* <h1 className=" text-2xl text-neutral font-bold mb-4">Disorganized Data</h1> */}
+                            <div className="text-neutral ">
+                                <p>"Hello, im Sergio and i have 20 years old."</p>
+                            </div>
+                        </div>
+                        <ArrowRight className="hidden md:block mx-8 text-neutral" size={64}/>
+                        <ArrowDown className="block md:hidden my-8 self-center text-neutral" size={32}/>
+                        <div  className="w-full">
+                            {/* <h1 className=" text-2xl text-neutral font-bold mb-4">Structured data</h1> */}
+                            <div className="rounded-xl text-neutral">
+                                <div>
+                                    <pre>
+                                        {
+                                            JSON.stringify({
+                                                name: "Sergio",
+                                                subject: "Custom plan"
+                                            }, null, 4)
+                                        }
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 className="text-3xl text-center md:text-5xl lg:text-6xl text-accent-content font-semibold">Extract JSON from <span className=" ">any data</span></h1>
+                    <h2 className="text-xl text-center md:text-3xl lg:text-4xl text-accent-content font-normal">with AI</h2>
+                    {/* <p className="py-6 max-w-2xl text-base-content text-sm md:text-lg lg:text-xl">No one likes to work with unstructure data. <br/>JSON scrap helps you to extract strucured data from any source.</p> */}
+                    
+                    <p className="py-6 max-w-2xl text-center text-base-content text-sm md:text-lg lg:text-xl">Dont waste your time coding complex data extraction algorithms</p>
+
+                    <div className="text-primary w-full flex flex-col items-center justify-center md:flex-row gap-6 mb-8">
+                        <div className="flex flex-row gap-2">
+                            <Check />
+                            <p>Web scrapping</p>
+                        </div>
+                        <div className="flex flex-row gap-2 ">
+                            <Check/>
+                            <p>Easy to use</p>
+                        </div>
+                        <div className="flex flex-row gap-2">
+                            <Check />
+                            <p>Cheap</p>
+                        </div>
+                        <div className="flex flex-row gap-2">
+                            <Check />
+                            <p>AI Powered</p>
+                        </div>
+                    </div>
+                    <a href="#pricing" className="btn btn-primary">Get Started for free</a>
                 </div>
+
 
                 {/* <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
                     <span className="font-semibold text-gray-400 uppercase">FEATURED IN</span>

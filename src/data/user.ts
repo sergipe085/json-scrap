@@ -1,3 +1,4 @@
+import { getSubscription } from "@/actions/stripe/subscription";
 import { db } from "@/lib/db";
 
 export async function getUserById(id: string) {
@@ -28,4 +29,16 @@ export async function getUserByApiKey(apiKey: string) {
     })
 
     return user;
+}
+
+export async function getUserSubscription(id: string) {
+    const user = await getUserById(id);
+
+    if (!user?.stripeSubscriptionId) {
+        return null;
+    }
+
+    const subscription = await getSubscription(user.stripeSubscriptionId);
+
+    return subscription;
 }

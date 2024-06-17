@@ -1,20 +1,12 @@
+import { getProduct } from "@/data/stripe";
+import { getUserSubscription } from "@/data/user";
 import { auth, signOut } from "@/lib/auth"
 
 export default async function Dashboard() {
-    const session = await auth();
 
     return (
-        <div>
-            {JSON.stringify(session)}
-
-            <form action={async () => {
-                "use server"
-                await signOut()
-            }}>
-                <button type="submit">
-                    Sign Out
-                </button>
-            </form>
-        </div>
+        <>
+            <h1 className="text-2xl text-center md:text-3xl lg:text-4xl text-accent-content font-semibold">Dashboard</h1>
+        </>
     )
 }

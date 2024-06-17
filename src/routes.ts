@@ -1,6 +1,8 @@
 export const publicRoutes = [
     "/",
-    "/api/json"
+    "/checkout",
+    "/api/json",
+    "/api/stripe/webhook",
 ]
 
 export const authRoutes = [
