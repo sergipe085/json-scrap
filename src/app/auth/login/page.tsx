@@ -6,12 +6,10 @@ import Link from "next/link";
 import { GithubSignin } from "../_components/github-signin";
 import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
+import { Suspense } from "react";
+import { SignInButton } from "./_components/sign-in-button";
 
 export default function Login() {
-    const params = useSearchParams();
-
-    const callback = params.get("callback");
-
     return (
         <>
             {/* <PageTitle>Login</PageTitle> */}
@@ -33,13 +31,11 @@ export default function Login() {
                     </label>
 
                     <div className="card-actions w-full">
-                        <button onClick={() => signIn("github", {
-                            callbackUrl: callback as string
-                        })} className="btn w-full btn-primary">Continue</button>
+                        <button className="btn w-full btn-primary">Continue</button>
                         <p>or</p>
-                        <button onClick={() => signIn("github", {
-                            callbackUrl: callback as string
-                        })} className="btn w-full btn-outline btn-neutral"><Github/></button>
+                        <Suspense>
+                            <SignInButton/>
+                        </Suspense>
                     </div>
                     <p>dont have an account? <Link href={"/auth/register"}>click here</Link></p>
                 </div>
